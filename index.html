@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoply - Elegant goods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">
+                    <h1>Shoply</h1>
+                    <p>Elegant goods</p>
+                </div>
+            </div>
+
+            <nav id="nav">
+                <a href="#products">Products</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <button class="cart-btn" onclick="toggleCart()">
+                🛒 Cart
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </header>
+
+        <section class="hero" id="features">
+            <div class="hero-content">
+                <h2>Discover elegant, everyday essentials</h2>
+                <p>High-quality items that combine style, functionality, and comfort for your daily needs and lifestyle.</p>
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search items, e.g, watch" id="searchInput">
+                    <button class="search-btn" onclick="performSearch()">Search</button>
+                </div>
+
+                <div class="features">
+                    <span class="feature-tag">Free express shipping</span>
+                    <span class="feature-tag">30-day returns</span>
+                </div>
+            </div>
+
+            <div class="featured-product">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Urban Runner Sneakers">
+                </div>
+                <div class="featured-label">Featured</div>
+                <h3 class="product-title">Urban Runner Sneakers</h3>
+                <div class="product-price">₹3,499</div>
+                <p class="product-desc">Comfortable and stylish sneakers perfect for everyday wear and light running.</p>
+                <div class="product-actions">
+                    <button class="add-cart-btn"
+                        onclick="addToCart('Urban Runner Sneakers', 3499, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop')">
+                        Add to cart
+                    </button>
+                    <button class="details-btn" onclick="showNotification('Details coming soon!')">View Details</button>
+                </div>
+            </div>
+        </section>
+        <section class="products-section" id="products">
+            <h3>Popular products</h3>
+
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Sneakers">
+                    </div>
+                    <div class="product-info">
+                        <h4>Urban Runner Sneakers</h4>
+                        <p style="color: #6b7280; font-size: 14px;">Crafted with care — demo shop @shoply</p>
+                        <div class="product-footer">
+                            <span style="font-size: 24px; font-weight: bold; color: #1f2937;">₹3,499</span>
+                            <button class="add-btn"
+                                onclick="addToCart('Urban Runner Sneakers', 3499, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop')">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #d1d5db 0%, #e5e7eb 100%);">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop" alt="Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Curated choice</span>
+                        <h4>Comfy Hoodie</h4>
+                        <div class="product-footer">
+                            <span style="font-size: 24px; font-weight: bold; color: #1f2937;">₹3,499</span>
+                            <button class="add-btn"
+                                onclick="addToCart('Comfy Hoodie', 3499, 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop')">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop"
+                            alt="Backpack">
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Curated choice</span>
+                        <h4>Everyday Backpack</h4>
+                        <div class="product-footer">
+                            <span style="font-size: 24px; font-weight: bold; color: #1f2937;">₹3,499</span>
+                            <button class="add-btn"
+                                onclick="addToCart('Everyday Backpack', 3499, 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop')">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop"
+                            alt="Classic Watch">
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Trending</span>
+                        <h4>Classic Watch</h4>
+                        <div class="product-footer">
+                            <span style="font-size: 24px; font-weight: bold; color: #1f2937;">₹5,999</span>
+                            <button class="add-btn"
+                                onclick="addToCart('Classic Watch', 5999, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop')">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=300&fit=crop"
+                            alt="Designer Sunglasses">
+                    </div>
+                    <div class="product-info">
+                        <h4>Designer Sunglasses</h4>
+                        <div class="product-footer">
+                            <span style="font-size: 24px; font-weight: bold; color: #1f2937;">₹2,799</span>
+                            <button class="add-btn"
+                                onclick="addToCart('Designer Sunglasses', 2799, 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=300&fit=crop')">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop"
+                            alt="Wireless Headphones">
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Best Seller</span>
+                        <h4>Wireless Headphones</h4>
+                        <div class="product-footer">
+                            <span style="font-size: 24px; font-weight: bold; color: #1f2937;">₹4,299</span>
+                            <button class="add-btn"
+                                onclick="addToCart('Wireless Headphones', 4299, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop')">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add some items to get started!</p>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>Checkout</button>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <footer id="about" style="margin-top:50px; background:#f3f4f6; padding:30px 0; text-align:center; color:#4b5563; font-size:16px; border-top:1px solid #e5e7eb;">
+        <div style="max-width:1200px; margin:auto; padding:0 20px; display: flex; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <h2 style="margin:0; font-size:22px; color:#111827;">Shoply</h2>
+            </div>
+            
+            <p style="font-size:14px; color:#9ca3af;">© 2025 Shoply. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
